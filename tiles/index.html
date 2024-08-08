@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <title>Tiles</title>
+</head>
+<body>
+
+  <div id="wrapper">
+    <div id="counter">
+      <div>Steps:&nbsp;&nbsp;&nbsp;&nbsp; <span id="steps">0</span></div>
+      <div>Rotations: <span id="rotations">0</span></div>
+    </div>
+
+    <game-timer id="timer"></game-timer>
+    
+    <div id="box" data-size="70" data-qty="4" data-space="4"></div>
+
+  <div class="rotate_btn" id="toLeft">
+    <svg viewBox="-3 -3 25 25"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:svg="http://www.w3.org/2000/svg">
+      <g transform="translate(-68,-72)">
+        <path class="arrow" d="m 73.38091,73.654754 1.22608,1.703023 c 0.76297,-0.324283 1.60092,-0.504129 2.47969,-0.504129 3.51297,0 6.38045,2.867479 6.38045,6.380446 0,3.512967 -2.86748,6.380447 -6.38045,6.380447 -3.27996,0 -5.99674,-2.499862 -6.34275,-5.690757 l 1.86394,-0.04422 c 0.3107,2.201295 2.18804,3.880095 4.47881,3.880095 2.51013,0 4.52593,-2.015439 4.52593,-4.52557 0,-2.510128 -2.0158,-4.524481 -4.52593,-4.524481 -0.47382,0 -0.92961,0.07258 -1.35763,0.206219 l 1.11118,1.543194 -2.94504,0.296825 -2.94505,0.296823 1.21521,-2.69896 z" />
+      </g>
+    </svg>
+  </div>
+
+  <div class="rotate_btn" id="toRight">
+    <svg viewBox="-3 -3 25 25"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:svg="http://www.w3.org/2000/svg">
+      <g transform="translate(-68,-72)">
+        <path class="arrow" d="m 80.83015,73.654754 -1.22608,1.703023 c -0.76297,-0.324283 -1.60092,-0.504129 -2.47969,-0.504129 -3.51297,0 -6.38045,2.867479 -6.38045,6.380446 0,3.512967 2.86748,6.380447 6.38045,6.380447 3.27996,0 5.99674,-2.499862 6.34275,-5.690757 l -1.86394,-0.04422 c -0.3107,2.201295 -2.18804,3.880095 -4.47881,3.880095 -2.51013,0 -4.52593,-2.015439 -4.52593,-4.52557 0,-2.510128 2.0158,-4.524481 4.52593,-4.524481 0.47382,0 0.92961,0.07258 1.35763,0.206219 l -1.11118,1.543194 2.94504,0.296825 2.94505,0.296823 -1.21521,-2.69896 z" />
+      </g>
+    </svg>
+  </div>
+
+  </div>
+</body>
+
+<script>
+  start();
+</script>
+
+</html>

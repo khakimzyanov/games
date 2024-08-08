@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #f0f0f0;
+  --fg-color: #222222;
+  --tile-bg-color: #fc644c;
+  --tile-fg-color: var(--bg-color);
+  --rotate-bg-color: #bbbbbb;
+  --counter-color: #888888;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Verdana', 'Arial', sans-serif;
+  background-color: var(--bg-color);
+}
+
+#wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#box {
+  position: relative; 
+  outline: 6px solid var(--tile-bg-color);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  transition: transform .3s;
+}
+
+.tile {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--tile-bg-color);
+  border-radius: 5px;
+  font-family: monospace;
+  font-weight: bold;
+  transition: transform .3s, top .1s, left .1s;
+}
+
+.tile-inner {
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  color: var(--tile-fg-color);
+}
+
+.tile.psb {
+  cursor: pointer;
+}
+
+.rotate_btn {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  outline: 1px solid var(--tile-fg-color);
+  outline-offset: -3px;
+  background-color: var(--rotate-bg-color);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor:pointer;
+}
+
+.rotate_btn::before {
+  position: absolute;
+  bottom: -20px;
+  font-size: .8em;
+  font-family: monospace;
+  color: var(--counter-color);
+}
+
+#toRight {
+  right: -100px;
+}
+
+#toLeft {
+  left: -100px;
+}
+
+#toRight::before {
+  content: "ctrl + right";
+}
+
+#toLeft::before {
+  content: "ctrl + left";
+}
+
+.rotate_btn:active {
+  box-shadow: none; 
+}
+
+.arrow {
+  fill: var(--bg-color);
+}
+
+#counter {
+  position: absolute;
+  bottom: -50px;
+  margin: auto;
+  font-size: 1em;
+  font-family: monospace;
+  color: var(--counter-color);
+}
+
+#complete {
+  position: absolute;
+  top: -90px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--tile-bg-color);
+}
+
+#timer {
+  position: absolute;
+  top: -50px;
+  font-size: 1.3em;
+  font-family: monospace;
+  color: var(--counter-color);
+}
