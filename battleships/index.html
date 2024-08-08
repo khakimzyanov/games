@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+</head>
+<body>
+	<div class="maps">
+		<div id="user" class="map-wrapper">
+			<div class="statusbar"></div>
+			<div class="map">
+				<div class="field"></div>
+			</div>
+		</div>
+		<div id="pc" class="map-wrapper">
+			<div class="statusbar"></div>
+			<div class="map lock">
+				<div class="field"></div>
+			</div>
+			<div class="showpc">
+				<label for="s">
+					показать <input type="checkbox" id="s">
+				</label>
+			</div>
+		</div>
+	</div>
+
+	<div class="prsbar"></div>
+
+	<div class="display">
+		<svg class="display-arrow user" width="60" height="30">
+			<polygon class="arrow-shadow" points="3,23 30,3 57,23" fill="rgba(0, 0, 0, .4)" />
+			<polygon points="0,20 30,0 60,20" fill="#47739f" />
+		</svg>
+		<svg class="display-arrow pc" width="60" height="30">
+			<polygon class="arrow-shadow" points="3,23 30,3 57,23" fill="rgba(0, 0, 0, .4)" />
+			<polygon points="0,20 30,0 60,20" fill="#47739f" />
+		</svg>
+		<div class="display-inner">
+			<div class="display-msg"></div>
+			<div class="display-btns">
+				<button class="display-btn display-btn1"></button>
+				<button class="display-btn display-btn2"></button>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script>
+	const USER = new Gamer('user');
+	const PC = new Gamer('pc');
+	start();
+</script>
+
+</html>
