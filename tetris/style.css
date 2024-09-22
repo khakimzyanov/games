@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+:root {
+  --body-back: #f0f0f0;
+  --tetris-back: #272822;
+  --shadow: rgba(39, 40, 34, .5);
+  --popap: #ccc;
+  --popap-text: #555;
+  --shapebox-outline: #5c5e54;  
+  --cell-outline: var(--shapebox-outline);
+  --cell-empty: #525449;
+  --cell-filled: #77acc7;
+  --cell-shape: #aad0e3;
+  --cell-next: #aaa;
+  --text-speed: #ae81ff;
+  --text-score: #e6db74;
+  --arrow: #75715e;
+  --text-arrow: var(--arrow);
+  --back-btn: #79ba61;
+  --fore-btn: #f0f0f0;
+} 
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--body-back);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    position: relative;
+    font-family: monospace;
+    overflow: hidden;
+}
+
+.shadow {
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--shadow);
+  z-index: 2;
+}
+
+.shadow > div {
+  width: 200px;
+  height: 70px;
+  margin: auto;
+  background-color: var(--popap);
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 70px;
+  border-radius: 3px;
+  color: var(--popap-text);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#tetris {
+  position: relative;
+  display: flex;
+  padding: 40px;
+  background-color: var(--tetris-back);
+  border-radius: 5px;
+}
+
+#shapebox {
+  position: relative;
+  outline: 2px solid var(--shapebox-outline); 
+  outline-offset: 2px;
+  width: 300px;
+  height: 600px;
+  border-radius: 1px;
+}
+
+#viewbox {
+  position: absolute;
+  bottom: 0;
+}
+
+.row {
+  height: 30px;
+}
+
+.cell {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 1px;
+
+}
+
+.cell[data-r] {
+  outline: 1px solid var(--cell-outline);
+}
+
+.cell[data-r="0"] {
+  background-color: var(--cell-empty);
+}
+
+.cell[data-r="1"] {
+  background-color: var(--cell-filled);
+}
+
+.cell[data-r="2"] {
+  background-color: var(--cell-shape);
+}
+
+.cell.next {
+  background-color: var(--cell-next);
+  outline: 1px solid var(--tetris-back);
+}
+
+.cell.invisible {
+  visibility: hidden;
+}
+
+#infobox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 150px;
+  height: 600px;
+  margin-left: 40px;
+}
+
+#nextShape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  margin: 20px 0;
+}
+
+#speed,
+#score {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+#speed { color: var(--text-speed) }
+#score { color: var(--text-score) }
+
+#speed::before {
+  content: "SPEED: ";
+}
+
+#score::before {
+  content: "SCORE: ";
+}
+
+#btn {
+    position: relative;
+    width: 80%;
+    margin: 30px 0;
+    padding: 10px 20px;
+    background-color: var(--back-btn);
+    border: none;
+    border-radius: 5px;
+    color: var(--fore-btn);
+    text-align: center;
+    cursor: pointer;
+}
+
+#btn:active {
+  top: 1px;
+}
+
+.arrow {
+  color: var(--text-arrow);
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  --size1: 14px;
+  --size2: 8px;
+  --size3: 4px;
+  --bgcolor: var(--arrow);
+}
+
+.arrow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;  
+}
+
+.arrow.top::before {
+  border-left: var(--size2) solid transparent;
+  border-right: var(--size2) solid transparent;
+  border-bottom: var(--size1) solid var(--bgcolor);
+}
+
+.arrow.right::before {
+  border-top: var(--size2) solid transparent;
+  border-bottom: var(--size2) solid transparent;
+  border-left: var(--size1) solid var(--bgcolor);
+}
+
+.arrow.bottom::before {
+  border-left: var(--size2) solid transparent;
+  border-right: var(--size2) solid transparent;
+  border-top: var(--size1) solid var(--bgcolor);  
+}
+
+.arrow.left::before {
+  border-top: var(--size2) solid transparent;
+  border-bottom: var(--size2) solid transparent;
+  border-right: var(--size1) solid var(--bgcolor);  
+}
+
+.arrow.space::before {
+  top: 4px;
+  border-top: 4px solid var(--bgcolor);
+  border-bottom: 4px solid var(--bgcolor);
+  border-right: 10px solid var(--bgcolor);
+  border-left: 10px solid var(--bgcolor);
+} 
